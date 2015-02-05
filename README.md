@@ -6,7 +6,7 @@ simplify the  motor for python to use
 
 	$from mongoHelper import Mongo
 	
-	$db = Mongo("db_name",ip="127.0.0.1") # default parameter ip is "127.0.0.1"
+	$db = Mongo("db_name",ip="127.0.0.1") # default parameter ip is "127.0.0.1" can connect to remote directly
 
 	$db.find("collection_name",**{
 			"name":"test",
