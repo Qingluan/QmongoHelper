@@ -3,5 +3,5 @@
 sudo pip install tornado;
 sudo pip install motor;
 sleep 1;
-sudo mkdir /usr/local/lib/python2.7/site-packages/mongoHelper && cp -a ./* /usr/local/lib/python2.7/site-packages/mongoHelper/
+sudo mkdir -p /usr/local/lib/python2.7/site-packages/mongoHelper && cp -a ./* /usr/local/lib/python2.7/site-packages/mongoHelper/
 
