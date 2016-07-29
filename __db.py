@@ -75,11 +75,11 @@ class dbhelper(object):
 	# def to_list_callback(self,infos,error):
 	def log(self,msg):
 		if self.debug:
-			print "[{}] :{}".format(asctime(),msg)
+			print ("[{}] :{}".format(asctime(),msg))
 
 	def callback(self,info,error):
 		if error:
-			print "[err ]: {}".format(error)
+			print ("[err ]: {}".format(error))
 		else:
 			self.result = info
 
