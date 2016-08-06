@@ -1,5 +1,4 @@
 import motor
-from bson import ObjectId
 from tornado.ioloop import IOLoop
 from time import *
 
@@ -8,8 +7,6 @@ def _run(func):
         dbhelper.instance.result = None
         res =  func(*args,**kargs)
         IOLoop.instance().start()
-        if '_id' in kargs:
-            kargs['_id'] = ObjectId(kargs['_id'])
         if dbhelper.instance.result:
             return dbhelper.instance.result
     return _init
