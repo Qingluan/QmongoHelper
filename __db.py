@@ -69,7 +69,7 @@ class dbhelper(object):
 
     @_run
     def update(self,document,target,**kargs):
-        self._db[document].update(kargs,target,callback=self.callback)
+        self._db[document].update(target,kargs,callback=self.callback)
         
 
     # def to_list_callback(self,infos,error):
