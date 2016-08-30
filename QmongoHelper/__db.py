@@ -26,7 +26,7 @@ def _insert(func):
 
 
 
-class dbhelper(object):
+class _dbhelper(object):
     connections = {}
     instance=None
     dbs = []
