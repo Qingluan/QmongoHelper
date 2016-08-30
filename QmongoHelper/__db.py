@@ -4,11 +4,11 @@ from time import *
 
 def _run(func):
     def _init(*args,**kargs):
-        dbhelper.instance.result = None
+        _dbhelper.instance.result = None
         res =  func(*args,**kargs)
         IOLoop.instance().start()
-        if dbhelper.instance.result:
-            return dbhelper.instance.result
+        if _dbhelper.instance.result:
+            return _dbhelper.instance.result
     return _init
 
 def _insert(func):
@@ -34,15 +34,15 @@ class _dbhelper(object):
         self.client = motor.MotorClient('mongodb://%s:27017'%ip)
         self._db = self.client[document]
         
-        dbhelper.instance  = self
-        dbhelper.dbs.append(self._db)
-        dbhelper.connections[document] =  self.client
+        _dbhelper.instance  = self
+        _dbhelper.dbs.append(self._db)
+        _dbhelper.connections[document] =  self.client
         self.debug = debug
 
         self.document = document 
     def __del__(self):
         self.client.close()
-        del dbhelper.connections[self.document]
+        del _dbhelper.connections[self.document]
         
         self.log("connection colosed ")
 
